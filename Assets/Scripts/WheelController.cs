@@ -23,8 +23,8 @@ public class WheelController : MonoBehaviour
 
     private void Update()
     {
-        var brake = Input.GetKey(KeyCode.Space);
-        if(brake && power) return;
+        // var brake = Input.GetKey(KeyCode.Space);
+        // if(brake && power) return;
         _wheelCollider.GetWorldPose(out var pos, out var rot);
         _wheelTransform.position = pos;
         _wheelTransform.rotation = rot;
@@ -32,19 +32,19 @@ public class WheelController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var brake = Input.GetKey(KeyCode.Space);
+        //var brake = Input.GetKey(KeyCode.Space);
         if (steer)
         {
             _wheelCollider.steerAngle = SteerAngle * (invertSteer ? -1 : 1);
         }
-        if (brake && power)
-        {
-            _wheelCollider.brakeTorque = 500.0f;
-        }
-        else
-        {
-            _wheelCollider.brakeTorque = 0;
-        }
+        // if (brake && power)
+        // {
+        //     _wheelCollider.brakeTorque = 500.0f;
+        // }
+        // else
+        // {
+        //     _wheelCollider.brakeTorque = 0;
+        // }
         if (power)
         {
             _wheelCollider.motorTorque = Torque;

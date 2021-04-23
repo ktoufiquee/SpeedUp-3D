@@ -24,7 +24,8 @@ public class CarController : MonoBehaviour
     private void Update()
     {
         Steer = Input.GetAxis("Horizontal");
-        Throttle = Input.GetAxis("Vertical");
+        Throttle = 1; 
+        //Input.GetAxis("Vertical");
 
         foreach (var wheel in _wheels)
         {
